@@ -1,0 +1,208 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.flex-inline{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.link{
+  text-decoration: none;
+  @include themify {
+    color: $normal-text;
+  }
+}
+
+// .link:hover{
+//   color: #0c0e16;
+// }
+
+
+.invoice-list-head {
+  margin: 72px 0 65px 0;
+  margin-top: 72px;
+  margin-bottom: 65px;
+  .mobile {
+    display: none;
+  }
+  .invoice-list-head-title {
+    margin-bottom: 8px;
+  }
+  .invoice-filter {
+    background: #f8f8fb;
+    margin-left: auto;
+    margin-right: 40px;
+    border: none;
+    border-bottom: 1px solid #7c5dfa;
+  }
+  .arrow {
+    margin-left: 16px;
+  }
+}
+
+.invoice-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  .invoice-list-item {
+    height: 72px;
+    @include themify {
+      background-color: $base-bg-col;
+    }
+    border-radius: 8px;
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
+
+    // filter: drop-shadow(0px 10px 10px rgba(72, 84, 159, 0.11));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 16px 24px 16px 32px;
+  }
+  .invoice-list-item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  // mobile only element
+  .date-price-container {
+    display: none;
+  }
+
+  // all item-values
+  .invoice-list-item-value {
+    text-align: left;
+  }
+
+  // specific item-values
+  .invoice-id {
+    margin-right: 40px;
+    width: 63px;
+    text-transform: uppercase;
+  }
+  .date {
+    width: 130px;
+    margin-right: 10px;
+  }
+  .price {
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 40px;
+  }
+  .status {
+    width: 104px;
+  }
+  .arrow {
+    margin-left: 20px;
+  }
+  .extra-space:after {
+    content: " ";
+    white-space: pre;
+  }
+}
+
+.invoice-list-empty {
+  width: 242px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  .invoice-list-empty-title {
+    margin-top: 64px;
+    margin-bottom: 24px;
+  }
+}
+
+@media only screen and (max-width: $laptop-br) {
+  .invoice-list-head {
+    margin: 56px 0;
+  }
+  .invoice-list {
+    .invoice-list-item {
+      padding: 16px 24px 16px 24px;
+    }
+    .invoice-id {
+      margin-right: 27px;
+    }
+    .date {
+      width: 112px;
+      margin-right: 33px;
+    }
+  }
+}
+
+.select{
+  @include themify {
+    color: $normal-text;
+    background-color: $item-bg;
+  }
+}
+
+@media only screen and (max-width: $mobile-br) {
+  .invoice-list-head {
+    margin: 32px 0;
+    .invoice-list-head-title {
+      margin-bottom: 4px;
+    }
+    .invoice-filter {
+      margin-right: 18px;
+    }
+    .mobile {
+      display: inline-block;
+    }
+    .desktop {
+      display: none;
+    }
+    .arrow {
+      margin-left: 12px;
+    }
+  }
+  .invoice-list {
+    .arrow,
+    .date.desktop,
+    .price.desktop {
+      display: none;
+    }
+    .invoice-list-item {
+      height: 134px;
+      flex-wrap: wrap;
+      padding: 24px;
+    }
+    .invoice-list-item-value {
+      margin: 0;
+      width: 50%;
+      &.name {
+        margin-top: 2px;
+        align-self: flex-start;
+        text-align: right;
+      }
+      &.invoice-id {
+        margin-bottom: 24px;
+      }
+    }
+    .date-price-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .price,
+    .date {
+      margin: 0;
+    }
+    .date {
+      margin-bottom: 8px;
+    }
+
+    .invoice-list-status {
+      width: 104px;
+    }
+  }
+}

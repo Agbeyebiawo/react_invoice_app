@@ -1,0 +1,123 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.overlay{
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0,0,0,0.555);
+}
+
+// .display{
+//     width: 100%;
+//     left: 0;
+//     transition: 0.4s ease all;
+// }
+
+.card{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;	
+}
+
+.card-body{
+    width: 470px;
+    // position: absolute;
+    // left: 700px;
+    // top: 350px;
+    // margin: auto;
+    height: auto;
+    @include themify {
+        background-color: $item-bg;
+    }
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+// .wrapper{
+//     width: 90%;
+//     margin: 15px auto 0 auto;
+// }
+
+.flex-element{
+    display: flex;
+    flex-direction: row;
+}
+
+.end-itms{
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.m-x{
+    margin-right: 2ch;
+}
+
+
+.default{
+    @include themify {
+        color: $hash-color;
+    }
+    @include themify {
+        background-color: $default;
+    }
+    border-radius: 50px;
+    border: none;
+}
+
+.span{
+    padding: 24px;
+}
+
+@media screen and (max-width: $laptop-br) {
+    .overlay{
+        width: 100%;
+        height: 100vh;
+        left: 0;
+    }
+
+    // .display{
+    //     right: 0;
+    //     width: 100%;
+    //     height: 100vh;
+    // }
+}
+
+@media screen and (max-width: $mobile-br) {
+    .overlay{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+    }
+
+    .card-body{
+        width: 80%;
+    }
+
+    .flex-element{
+        display: block;
+        // flex-direction: column;
+    }
+}
+
+@media screen and (max-width: $mobile-br) {
+    
+}

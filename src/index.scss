@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+@import "./styles/variables";
+@import "./styles/mixins";
+@import "./styles/typography";
+@import "./styles/layout";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Spartan", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include themify {
+    color: $normal-text;
+    background-color: $page-bg;
+  }
+}
+
+.primary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  background-color: $light-primary;
+  color: #ffffff;
+  border-radius: 24px;
+  border-style: none;
+  font-weight: bold;
+  padding: 0 24px 0 23px;
+  &:hover {
+    cursor: pointer;
+  }
+  &.with-icon {
+    padding: 0 15px 0 8px;
+  }
+  .button-icon-container {
+    background-color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.danger {
+    background-color: $danger;
+  }
+  &.default {
+    background-color: $default;
+    color: $light-text-1;
+  }
+}
+// status element
+.invoice-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  height: 40px;
+  border-radius: 6px;
+  &.paid {
+    color: #33d69f;
+    @include themify {
+      background-color: $status-paid-bg;
+    }
+  }
+  &.pending {
+    color: #ff8f00;
+    @include themify {
+      background-color: $status-pending-bg;
+    }
+  }
+  &.draft {
+    @include themify {
+      color: $status-draft-text-color;
+      background-color: $status-draft-bg;
+    }
+  }
+  .status-container {
+    display: flex;
+    align-items: flex-end;
+  }
+  .status-text {
+    color: currentColor;
+    line-height: 9px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  .status-point {
+    display: inline-block;
+    background-color: currentColor;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+}
+.back-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+  .back-nav-text {
+    margin-left: 24px;
+  }
+  a {
+    @include themify {
+      color: $normal-text;
+    }
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: $mobile-br) {
+  button,
+  .primary-button {
+    .button-icon-container {
+      margin-right: 8px;
+    }
+  }
+}
