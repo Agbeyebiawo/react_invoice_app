@@ -122,11 +122,11 @@ export function InvoiceBody(props) {
                           {item.quantity}
                         </span>
                         <span className="light-small light-text--1 bold invoice-list-value invoice-list-price">
-                          <span className="extra-space">$ </span>
+                          <span className="extra-space">£ </span>
                           {item.price}
                         </span>
                         <span className="body-1 bold invoice-list-value invoice-list-total">
-                          <span className="extra-space">$ </span>
+                          <span className="extra-space">£ </span>
                           {item.total}
                         </span>
                       </li>
@@ -142,12 +142,12 @@ export function InvoiceBody(props) {
                           </span>
                           <span className="light-text light-text--3 bold">
                             {item.quantity} x{" "}
-                            <span className="extra-space">$</span>
+                            <span className="extra-space">£</span>
                             {item.price}
                           </span>
                         </div>
                         <span className="body-1 bold invoice-list-value invoice-list-total">
-                          <span className="extra-space">$ </span>
+                          <span className="extra-space">£ </span>
                           {item.total}
                         </span>
                       </li>
@@ -159,7 +159,7 @@ export function InvoiceBody(props) {
               <div className="flex-row flex-row--center invoice-balance-total">
                 <span className="body-2">Amount Due</span>
                 <span className="big-total bold">
-                  <span className="extra-space">$ </span>
+                  <span className="extra-space">£ </span>
                   {invoice.total}
                 </span>
               </div>

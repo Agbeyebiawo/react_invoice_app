@@ -33,12 +33,12 @@ export function InvoiceItem(props) {
                         {invoice.paymentDue}
                     </span>
                     <span className="price">
-                        $ {invoice.total}
+                        £ {invoice.total}
                     </span>
                 </div>
 
                 <div className="invoice-list-item-value price desktop">
-                    <span className="extra-space">$</span>
+                    <span className="extra-space">£</span>
                     {invoice.total}
                 </div>
 
